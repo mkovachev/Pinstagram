@@ -1,16 +1,14 @@
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
-using Pinstagram.Data;
-using Pinstagram.Data.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Pinstagram.Data;
+using Pinstagram.Data.Models;
+using Pinstagram.Infrastructure;
 
 namespace Pinstagram
 {
@@ -89,6 +87,8 @@ namespace Pinstagram
                     spa.UseAngularCliServer(npmScript: "start");
                 }
             });
+
+            app.ApplyMigrations();
         }
     }
 }
