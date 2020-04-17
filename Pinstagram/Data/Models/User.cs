@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Pinstagram.Models
+namespace Pinstagram.Data.Models
 {
-    public class ApplicationUser : IdentityUser
+    public class User : IdentityUser
     {
     }
 }

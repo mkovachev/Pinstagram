@@ -1,4 +1,4 @@
-﻿using Pinstagram.Models;
+﻿using Pinstagram.Data.Models;
 using IdentityServer4.EntityFramework.Options;
 using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.EntityFrameworkCore;
@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace Pinstagram.Data
 {
-    public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>
+    public class PinstagramDbContext : ApiAuthorizationDbContext<User>
     {
-        public ApplicationDbContext(
+        public PinstagramDbContext(
             DbContextOptions options,
             IOptions<OperationalStoreOptions> operationalStoreOptions) : base(options, operationalStoreOptions)
         {
